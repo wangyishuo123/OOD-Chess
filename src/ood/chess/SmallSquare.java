@@ -11,4 +11,11 @@ public class SmallSquare {
             return true;
         return false;
     }
+
+    public void occupySqaure(ChessPiece piece) {
+        this.piece = piece;
+    }
+
+    public void removePiece() {
+    }
 }

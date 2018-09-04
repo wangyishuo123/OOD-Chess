@@ -8,14 +8,22 @@ public class ChessBoard {
     Stack<ChessPieceState> history;
 
     public void move(ChessPieceState state){
-        if(smallSquare[state.getNewX()][state.getNewY()].isAvailable()) {
            if(state.getPiece().isValidPosition(state.getCurrentX(), state.getCurrentY(), state.getNewX(), state.getNewY())) {
-               state.getPiece().setPositionX(state.getNewX());
-               state.getPiece().setPositionY(state.getNewY());
+         //      state.getPiece().setPositionX(state.getNewX());
+         //      state.getPiece().setPositionY(state.getNewY());
+               if(smallSquare[state.getNewX()][state.getNewY()].isAvailable()) {
+                   smallSquare[state.getNewX()][state.getNewY()].occupySqaure(state.getPiece());
+               }
+               else {
+                   smallSquare[state.getNewX()][state.getNewY()].removePiece();
+                   smallSquare[state.getNewX()][state.getNewY()].occupySqaure(state.getPiece());
+
+               }
                recordHistory(state);
 
+
            }
-        }
+
 
     }
 
