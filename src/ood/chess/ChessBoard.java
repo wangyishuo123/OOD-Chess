@@ -18,6 +18,7 @@ public class ChessBoard {
                    smallSquare[state.getNewX()][state.getNewY()].removePiece();
                    smallSquare[state.getNewX()][state.getNewY()].occupySqaure(state.getPiece());
 
+
                }
                recordHistory(state);
 

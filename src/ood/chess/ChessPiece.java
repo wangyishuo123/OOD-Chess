@@ -25,6 +25,7 @@ public class ChessPiece {
             }
         }
 
+
         else if(this.pieceType == ChessPieceType.Rooks && (newX == currentX || newY == currentY)){
             return true;
         }
